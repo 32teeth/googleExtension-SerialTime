@@ -1,6 +1,7 @@
 var Serial = (function(){
 	
-	var ports = ["no ports available"];
+	var ports = [];
+	var ports_full = [];
 	var port;
 
 	var baudrates = [115200, 57600, 38400, 28800, 19200, 14400, 9600, 4800, 2400, 1200, 600, 300];
@@ -18,7 +19,7 @@ var Serial = (function(){
 				for(var n = 0; n < ps.length; n++)
 				{
 					var p = ps[n].path.toString();
-					ports.push(
+					ports_full.push(
 						{
 							id:n,
 							long:p,
@@ -26,11 +27,16 @@ var Serial = (function(){
 							selected:false
 						}
 					);
+					ports.push(p.slice(p.lastIndexOf("/")+1, p.length));
 				}
 			})
 		}
+		else
+		{
+			ports.push("no ports");
+		}
 
-		list();
+		setTimeout(function(){list();}, 1000);
 	}
 
 	function list()

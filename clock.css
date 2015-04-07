@@ -77,7 +77,7 @@ h2
 {
 	left:-320px;
 	transition-delay: 100ms;
-	overflow-y:scroll;
+	overflow-y:auto;
 }
 
 .clock.open
