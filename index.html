@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>Google App - Serial Time</title>
+		<link rel="stylesheet" href="clock.css" />    
+	</head>
+	<body>
+		<div class="main">
+			<a class="toggle"></a>
+			<div class="menu">
+				<strong>Serial</strong>
+				<ul class="ports">
+					<li>Ports</li>
+				</ul>
+				<ul class="baudrates">
+					<li>Baudrates</li>
+				</ul>
+			</div>
+			<div class="clock">
+				<canvas id="clock"></canvas>
+			</div>
+		</div>
+		<script src="toggle.js"></script>
+		<script src="clock.js"></script>
+		<script src="serial.js"></script>
+	</body>
+</html>
